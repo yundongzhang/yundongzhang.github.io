@@ -1,217 +1,383 @@
-# Type: Minimal and Clean Free Jekyll Theme
+## HardCandy-Jekyll
 
-<img alt="Type: Minimal and Clean Free Jekyll Theme" src="https://user-images.githubusercontent.com/626005/63093493-c3daa880-bf65-11e9-860e-da88047cce24.png">
 
-- [Configurations](#configurations)
-- [Deployment](#deployment)
-- [Posts](#posts)
-- [Pages](#pages)
-- [Navigation](#navigation)
-- [Disqus Comments](#disqus-comments)
-- [Google Analytics](#google-analytics)
-- [Social Media Links](#social-media-links)
-- [Update favicon](#update-favicon)
 
-### Configurations
+### Preview
 
-Type theme comes with different customizations in the `_config.yml` file:
+[在线预览 view demo →](http://xseven.me/)
 
-```sh
-title:       Type
-email:       ''
-description: ''
-baseurl:     '' # The subpath of your site, e.g. /blog
-url:         '' # The base hostname & protocol for your site
-twitter:     ''
-github:      ''
-instagram:   ''
-facebook:    ''
+![1](/screenshot/1.png)
 
-markdown:  kramdown
-permalink: pretty
-paginate:  60
+![2](/screenshot/2.png)
 
-sass:
-  style: compressed
+![3](/screenshot/3.png)
 
-gems:
-  - jekyll-paginate
-  - jekyll/tagging
+想要查看手机端显示效果，扫描下方二维码浏览器打开即可
 
-include:
-  - _pages
+![4](/screenshot/4.png)
 
-exclude:
-  - vendor
-  - Gemfile
-  - Gemfile.lock
 
-# Tags
-tag_page_dir:         tag
-tag_page_layout:      tag_page
-tag_permalink_style:  pretty
 
-# Pages path
-defaults:
-  - scope:
-      path: '_pages'
-    values:
-      permalink: /:basename:output_ext
+### 主题特性
+
+- 主题基于 `jekyll 3.8.1` 开发
+- 响应式布局
+- 文章标签索引
+- 文章时间线索引
+- 博主个人信息展示
+- 支持9种代码高亮主题色
+- 支持 `dispus` 、 `来必力` 、 `Gitment` 三种评论系统
+- 支持 `百度统计` 、`谷歌分析` 两种网站追踪系统
+- 支持13款不同社交平台图标及链接地址指向
+- 支持11个不同平台的文章分享路口
+
+
+
+### 开始使用
+
+#### 线上部署
+
+​	首先在 `github` 上开启一个仓库起名为 `你的github用户名.github.io` 。并 `clone` 你的仓库到本地。 然后下载 `HardCandy-Jekyll` 的 [源码](https://github.com/xukimseven/HardCandy-Jekyll) 到本地之后，将 `_config.yml` 文件更改为自己的配置（下面会介绍）。之后，将所有文件拷贝至自己的本地仓库根目录下，再上传至自己的 `github` 线上仓库，即可通过域名 `https://你的github用户名.github.io` 访问看到自己的博客页面。
+
+#### 本地部署
+
+​	首先在本地安装 `Jekyll` [详情请戳](https://www.jekyll.com.cn/docs/quickstart/)
+
+​	安装完成之后，使用命令 `jekyll -v` 查看 **jekyll版本号** ，若低于 `jekyll 3.x.x` 则需要升级至 `jekyll 3.x.x` 。 
+
+​	使用 `gem install jekyll-paginate` 或 `sudo gem install jekyll-paginate` 安装Jekyll的分页插件。
+
+​	将源码 `clone` 到本地后，在终端进入 `HardCandy-Jekyll` 根目录，运行 `jekyll server` 或 `bundle exec jekyll serve` ，即可开启jekyll的服务。通过浏览器访问 [http://localhost:4000](http://localhost:4000) ，即可看到本地部署的 `HardCandy-Jekyll` 博客了。
+
+> warning！值得注意的地方：
+>
+> ​	由于本主题是基于 `jekyll 3.8.1` 开发 ，jekyll的版本差异也许会导致相关显示效果的差异。详情请参考官方文档：[news](https://jekyllrb.com/news/)
+
+
+
+### 配置文档
+
+- 开始
+  - [关于博客](#关于博客)
+  - [写文章](#写文章)
+- 组件
+  - [博主个人信息](#博主个人信息)
+  - [社交媒体](#社交媒体)
+  - [首页显示信息](#首页显示信息)
+  - [导航栏](#导航栏)
+  - [分页](#分页)
+  - [代码高亮主题](#代码高亮主题)
+  - [友情链接](#友情链接)
+  - [页脚](#页脚)
+- 第三方服务
+  - [评论系统的切换](#评论系统的切换)
+  - [文章分享的路口](#文章分享的路口)
+  - [网站流量追综的配置](#网站流量追综的配置)
+
+
+
+> ​	通用修改 `_config.yml` 文件，你便可以轻松搭建属于你自己的个人博客。
+>
+> ​	一部分配置，默认已经是配置好的，你只需要修改下面列出的内容即可完成搭建。
+
+
+
+#### 关于博客
+
+```yaml
+---
+# Site settings 配置站点
+title: 'your awesome title'
+description: 'your web description'
+keywords: 'your web keywords, another keywords'
+url: 'https://abc.github.io' # your host
+---
 ```
 
-### Deployment
+`title` ：用于页面的 title 标签的显示内容
 
-To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `jekyll serve` to start the Jekyll server.
+`description` ：网站的简介
 
-I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+`keywords` ：网站的关键词
 
-### Posts
+`url` ：网站域名
 
-To create a new post, you can create a new markdown file inside the `_posts` directory by following the [recommended file structure](https://jekyllrb.com/docs/posts/#creating-post-files).
 
-The following is a post file with different configurations you can add as an example:
 
-```sh
----
+#### 写文章
+
+​	博客通过解析 `markdown` 文件来部署文章页面的，所以用户写文章只需要写一篇markdown，并放置在站点根目录下的 `_post` 文件夹即可。具体的markdown语法自行上网搜索学习，或使用markdown编辑器进行写作。推荐一款 markdown编辑器：[typora](https://www.typora.io) 。支持 windows 、mac OSX 、Linux 。
+
+关于文章 YAML头信息：
+
+```yaml
 layout: post
-title: Welcome to Jekyll!
-featured: true
-tags: [frontpage, jekyll, blog]
-image: '/images/welcome.jpg'
+title:  "post title"
+subtitle: 'post subtitle'
+date:   2018-05-29 08:44:13
+tags: html js css
+description: ''
+color: 'rgb(154,133,255)'
+cover: ''
+```
+
+关于color：
+
+​	此处的color用于post页面的顶部位置的背景色。如上面展示图所示为 `rgb(154,133,255)` 色。
+
+​	对于color的书写，如果颜色代码为 `rgb` 或 `rgba` 又或是 `英文单词` 的话，可以不用引号包裹，但如果颜色代码为 `#123456` 这种16进制码的话，就必须使用引号包裹。所以，在使用中，推荐一致都使用引号，以免错误使用。
+
+​	当然，如果你在书写文章时，忘记写color的值的话，主题默认会为你填写 `rgb(154,133,255)` 色。就是上图显示的颜色。虽然不影响页面的显示，但如果想要更多彩的页面效果的话，建议在每一篇的头信息里写上 color 值。
+
+关于cover：
+
+​	此处需填写某一张图片的 `url` ，`url` 值可以是线上的某张图片，也可以是博客目录下的图片。关键是要书写正确。这张图片用于在首页下博客列表里显示，如下图。
+
+![5](/screenshot/5.png)
+
+
+
+#### 博主个人信息
+
+```yaml
+# 博主
+author: true
+name: 'your awesome name'
+NickName: 'your awesome nickname'
+webtitle: 'your awesome webtitle'
+bio: 'your awesome bio'
+about: true
+aboutyou: 'your introduction'
+portraits: '/assets/profile.jpeg' # your portraits image file path
+```
+
+​	该部分显示在 `关于博主` 页面，与 `社交媒体` 一同在下图显示。
+
+![6](/screenshot/6.png)
+
+关于author：
+
+​	使用 `true` 或者 `false` 来打开或关闭博主信息卡片，默认 true ，最佳体验也是 true 。
+
+关于about：
+
+​	使用 `true` 或者 `false` 来打开或关闭博主关于信息，即是否显示 aboutyou 部分的信息。默认 true ，该部分需要在 aboutyou 中输入相关信息，支持在此填写html代码。
+
+
+
+#### 社交媒体
+
+```yaml
+# SNS
+SNS: true
+SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
+  mail: 'mailto:abc@gmail.com'
+  weixin: '' # 你的微信二维码存放的地址
+  qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
+  github: ''
+  Codepen: ''
+  weibo: ''
+  instagram: ''
+  Twitter: ''
+  Dribbble: ''
+  Facebook: ''
+  Google: ''
+  zhihu: ''
+  juejin: ''
+  twitch: ''
+```
+
+​	~~主题一共配置了 13种 社交媒体的图标，只要在需要开启的社交账号的名字后填写你的个人主页链接即可，不需要开启的就在那一行的头部用 `#` 注释这一行即可。同样的，如果需要更换每个图标的排列位置，只需要改变他们的每一行排列的顺序即可。~~
+
+​	在 `SNS` 后填写  `true` 或者 `false` 来打开或者关闭这一部分。
+
+2018/09/28 更新：
+
+![7](/screenshot/sns-icon.png)
+
+- 更新社交图标为 线上地址 ，便于管理与修改。
+- 添加 **Codepen** 图标
+- 修改原来的圆形图标为不规则图标
+
+
+
+#### 首页显示信息
+
+```yaml
+---
+layout: default
+title: your awesome title
+page-title: awesome page-title.
+home-title: awesome home-title.
+description: description
 ---
 ```
 
-You can set the author, featured or not, tags, and the post image.
+​	该部分位于 `index.html` 页面，修改 `title` 、`page-title` 、`home-title`  、`description`为个人想要的信息，默认配置的显示效果如下图。
 
-The `featured` key is to mark the post as a featured post, this will add a simple star icon (*) to the postcard.
+![7](/screenshot/7.png)
 
-To keep things more organized, add post images to **/images/pages** directory, and add page images to **/images/pages** directory.
 
-To create a draft post, create the post file under the **_drafts** directory, and you can find more information at [Working with Drafts](http://jekyllrb.com/docs/drafts/).
 
-For tags, try to not add space between two words, for example, `Ruby on Rails`, could be something like (`ruby-on-rails`, `Ruby_on_Rails`, or `Ruby-on-Rails`).
+#### 导航栏
 
-Note that tags are not working with GitHub Pages, that's because the used [jekyll-tagging
-](https://github.com/pattex/jekyll-tagging) plugin is not [whitelisted](https://pages.github.com/versions/) by GitHub.
-
-To make this work, I use [Netlify.com](https://www.netlify.com/) for deployment.
-
-### Pages
-
-To create a new page, just create a new markdown file inside the `_pages` directory.
-
-The following is the `about.md` file that you can find as an example included in the theme with the configurations you can set.
-
-```sh
----
-layout: page
-title: About
-image: '/images/pages/about.jpeg'
----
+```yaml
+# nav 中文字符空格：&emsp;
+nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
+  首页: '/'
+  标签: '/tags.html'
+  时间线: '/timeline.html'
+  关于博主: '/about.html'
+  友情链接: '/friendLink.html'
 ```
 
-Things you can change are: `title` and `image` path.
+​	默认全部开启他们，当然如果想要自己添加，按照格式填在下方即可，当然页面显示顺序与每一行的位置有关。
 
 
-### Navigation
 
-The navigation on the sidebar will automatically include all the links to the pages you have created.
+#### 分页
 
-### Disqus Comments
-
-Open `_includes/disqus.html` file, and change the `aspirethemes-demos` value on line `12` with your [Disqus account shortname](https://help.disqus.com/customer/portal/articles/466208).
-
-```js
-s.src = '//aspirethemes-demo.disqus.com/embed.js';
+```yaml
+# 分页
+paginate: 2
+paginatepath: ['page:num']
 ```
 
-So, if your Disqus shortname is `exampleone`, the final code above should be
+​	随个人爱好在，在上面填写你需要的在首页一页最多显示多少篇博客的数字。
 
-```js
-s.src = '//exampleone.disqus.com/embed.js';
+​	本地部署的需要使用 `gem install jekyll-paginate` 或 `sudo gem install jekyll-paginate` 安装Jekyll的分页插件。
+
+
+
+#### 代码高亮主题
+
+```yaml
+# 代码高亮 使用rouge
+highlighter: rouge
+# 代码高亮主题使用pygments主题: autumn\ default\ emacs\ friendly\ manni\ murphy\ pastie\ perldoc\ tango 任选一个你喜欢的主题名称填在下面的单引号中
+pygmentsTheme: 'default'
 ```
 
-That's all you need to setup Disqus from the theme side. If you get any issue regarding that comments are unable to load. First, make sure you have [registered your website with Disqus (Step 1)](https://help.disqus.com/customer/portal/articles/466182-publisher-quick-start-guide)
+​	代码高亮使用 jekyll3.0 之后的默认高亮引擎 `rouge` 。关于主题，只需要在 `pygmentsTheme` 后填写喜欢的主题名称即可。共有9款主题可选，主题名见上文。
 
-And also check [Disqus troubleshooting guide](https://help.disqus.com/customer/portal/articles/472007-i-m-receiving-the-message-%22we-were-unable-to-load-disqus-%22) if you still have issues.
+​	代码高亮的写法：
 
-### Google Analytics
+~~~markdown
+``` css
+*{
+ margin:0;
+ padding:0;
+}
+```
+~~~
 
-To integrate Google Analytics, open `_includes/analytics.html`, and add your Google Analytics code.
+2018/09/28 更新：
 
-### Social Media Links
+![7](/screenshot/博客代码高亮例子.png)
 
-Social media links included in `_includes/footer.html` file.
+上图为 **代码高亮试例图** ，仅以 html 作为参考例子，其他代码参考 上图，或自行切换测试选择自己喜欢的代码高亮主题
 
-The theme is using [Evil Icons](http://evil-icons.io/), which contains very simple and clean icons. The following is a list of the social media icons to use:
 
-Twitter
 
-```html
-<span data-icon='ei-sc-twitter' data-size='s'></span>
+#### 友情链接
+
+```yaml
+# 友情链接
+friends:
+  jekyll: 'https://www.jekyll.com.cn/'
 ```
 
-Facebook
+​	按格式填写即可，排序与配置文件里的排序有关。
 
-```html
-<span data-icon='ei-sc-facebook' data-size='s'></span>
+
+
+#### 页脚
+
+```yaml
+# since
+footer:
+  since: 2018
 ```
 
-Instagram
+​	用于页脚显示时间。
 
-```html
-<span data-icon='ei-sc-instagram' data-size='s'></span>
+
+
+#### 评论系统的切换
+
+```yaml
+# 评论 最佳体验 在disqus、livere和Gitment之间三选一
+# disqus 评论
+disqus: false
+disqus_url: '' # https://abc.disqus.com/embed.js
+# 来必力评论
+livere: true
+livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
+# Gitment评论 OAuth Application
+Gitment: false
+Gitment_owner: ''  # github用户名
+Gitment_repo: ''  # github博客存放的仓库名
+client_id: ''  # 注册 OAuth Application 后获得的 client_id
+client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
 ```
 
-Pinterest
+​	按申请第三方评论是获取的相关信息在配置文件中进行填写即可。
 
-```html
-<span data-icon='ei-sc-pinterest' data-size='s'></span>
+​	共有三款评论可供选择，使用 `true` 或者 `false` 开启或关闭某个评论系统。可开启多个甚至全开。当然，最佳体验，开一个即可。
+
+​	三款评论的样式如下图：
+
+dispus：
+
+![8](/screenshot/8.png)
+
+来必力：
+
+![9](/screenshot/9.png)
+
+Gitment评论：
+
+![10](/screenshot/10.png)
+
+​	三款评论各有各的优势与坏处。出于显示样式与中国大陆网络环境考虑，主题默认开启 `来必力` 评论为最佳体验。当然需要填写好相关的 `livere_uid` 代码。
+
+
+
+#### 文章分享的路口
+
+```yaml
+# Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
+social-share: true
+social-share-items: ['qq', 'wechat', 'weibo', 'twitter', 'facebook']
 ```
 
-Vimeo
+​	为了让文章更方便地分享，使用了第三方分享插件[Share.js](http://overtrue.github.io/share.js/)，支持一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
 
-```html
-<span data-icon='ei-sc-vimeo' data-size='s'></span>
+​	只需要填写相关的名称在 `social-share-items` 后即可，显示顺序与书写顺序有关。
+
+
+
+#### 网站流量追综的配置
+
+```yaml
+# 百度统计 在baidu-url里填写自己相关的url代码
+baidu: true
+baidu-url: ''
+# 谷歌分析 在google-ID里填写自己在谷歌分析获得的追踪ID
+google: false
+google-ID: ''
 ```
 
-Google Plus
-
-```html
-<span data-icon='ei-sc-google-plus' data-size='s'></span>
-```
-
-SoundCloud
-
-```html
-<span data-icon='ei-sc-soundcloud' data-size='s'></span>
-```
-
-Tumblr
-
-```html
-<span data-icon='ei-sc-tumblr' data-size='s'></span>
-```
-
-Youtube
-
-```html
-<span data-icon='ei-sc-youtube' data-size='s'></span>
-```
-
-### Update favicon
-
-You can find the current favicon (favicon.ico) inside the theme root directory, just replace it with your new favicon.
+​	在 `baidu-url` 和 `google-ID` 分别填上注册获取的相关信息。使用 `true` 或者 `false` 开启或关闭他们。出于中国大陆网络环境，默认开启 百度统计 ，当然可以多开。
 
 
-### Aspire Themes
 
-👉 Visit [**aspirethemes.com**](http://bit.ly/type-jekyll-github-link) for more Jekyll, Ghost, and WordPress themes.
+### License 许可证
 
-<img alt="Aspire Themes" src="https://user-images.githubusercontent.com/626005/63092640-afe17780-bf62-11e9-9ea9-546489bb282c.png">
+HardCandy-Jekyll is licensed under [MIT](https://github.com/xukimseven/HardCandy-Jekyll/blob/master/LICENSE).
 
----
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8G8PKPEADPD42&source=url">
-  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif">
-</a>
+
+### 求Star 求关注
+
+看到这里，如果你喜欢我的小项目，欢迎下载使用他，也请你为我点个小星星 😜 ，多谢。

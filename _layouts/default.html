@@ -1,24 +1,34 @@
+<!-- 首页及其他页面的布局-Layout -->
 <!DOCTYPE html>
-<html lang='en'>
-
+<html>
+<head>
+<!-- 引入head标签 -->
 {% include head.html %}
-
+</head>
 <body>
+<!-- 页面主体 -->
+{{ content }}
 
-  {% include analytics.html %}
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 5,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
 
-  <div class='js-off-canvas-container c-off-canvas-container'>
-    {% include header.html %}
-
-    {{ content }}
-
-    {% include footer.html %}
-  </div>
-
-  <script src="{{ '/js/jquery-3.1.1.min.js' | prepend: site.baseurl }}"> </script>
-  <script src="{{ '/js/evil-icons.min.js' | prepend: site.baseurl }}">   </script>
-  <script src="{{ '/js/jquery.fitvids.js' | prepend: site.baseurl }}">   </script>
-  <script src="{{ '/js/app.js' | prepend: site.baseurl }}">              </script>
 </body>
-
 </html>

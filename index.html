@@ -1,15 +1,18 @@
 ---
 layout: default
+title: your awesome title
+page-title: your awesome page-title.
+home-title: your awesome home-title.
+description: description
 ---
 
-<div class='o-wrapper'>
-  <div class='o-grid'>
-    {% for post in paginator.posts %}
-      {% include post-card.liquid %}
-    {% endfor %}
-  </div>
-
-  <div class='o-grid'>
-    {% include pagination.html %}
-  </div>
-</div>
+{% include header.html %}
+{% include boot.html %}
+<main>
+    {% include title.html %}
+    <ul class="post-list">
+      {% include posts_paginator.html %}
+    </ul>
+</main>
+{% include pageNav.html %}
+{% include footer.html %}
