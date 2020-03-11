@@ -1,42 +1,18 @@
 ---
 layout: default
-title: 关于我
-page-title: aboutMe
-home-title: Show you about me.
-description:
+title: "The high quality, completely customizable and 100% free blog template for Jekyll"
+description: ""
 ---
 
-{% include header.html %}
-{% include boot.html %}
-<main>
-    {% include title.html %}
-    <ul class="ex-list">
-        <li class="fadeInUp animated">
-        {% if site.author %}
-          <div class="portraits"><img src="{{ site.portraits }}" alt=""></div>
-          <span id="yourname">{{ site.name }}</span>
-          <span id="yourbio">{{ site.bio }}</span>
-          {% if site.about %}
-            <span id="aboutyou">{{ site.aboutyou }}</span>
-          {% endif %}
-        {% endif %}
-        {% if site.SNS %}
-          {% for sns-icon in site.SNS-icon %}
-            <a href="{{ sns-icon[1] }}" title="{{ sns-icon[0] }}">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-{{ sns-icon[0] }}"></use>
-              </svg>
-            </a>
-          {% endfor%}
-        {% endif %}
-      </li>
-      <li class="fadeInUp animated">
-      {% if site.tags.size>0 %}
-          {% for tag in site.tags %}
-          <a href="tags.html#{{ tag[0] }}" class="tag">{{ tag[0]}}</a>
-          {% endfor %}
-      {% endif %}
-      </li>
-    </ul>
-</main>
-{% include footer.html %}
+<div class="about {% if site.scrollappear_enabled %}scrollappear{% endif %}">
+  <img src="{% asset 'about.jpg' @path %}" alt="About Nielsen Ramon header image" />
+  <h1>About me</h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</div>

@@ -1,90 +1,84 @@
-# Site settings 配置站点
-title: 'your awesome title'
-description: 'your web description'
-keywords: 'your web keywords, another keywords'
-url: 'https://abc.github.io' # your host
+# Mandatory settings
 
-# nav 中文字符空格：&emsp;
-nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
-  首页: '/'
-  标签: '/tags.html'
-  时间线: '/timeline.html'
-  关于博主: '/about.html'
-  友情链接: '/friendLink.html'
+blog_theme: light # Or use dark
+name: Chalk
+paginate: 25
+url: http://chalk.nielsenramon.com
 
-# 博主
-author: true
-name: 'your awesome name'
-NickName: 'your awesome nickname'
-webtitle: 'your awesome webtitle'
-bio: 'your awesome bio'
-about: true
-aboutyou: 'your introduction'
-portraits: '/assets/profile.jpeg' # your portraits image file path
 
-# SNS
-SNS: true
-SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
-  mail: 'mailto:abc@gmail.com'
-  weixin: '' # 你的微信二维码存放的地址
-  qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
-  github: ''
-  Codepen: ''
-  weibo: ''
-  instagram: ''
-  Twitter: ''
-  Dribbble: ''
-  Facebook: ''
-  Google: ''
-  zhihu: ''
-  juejin: ''
-  twitch: ''
+# Optional settings
 
-# 分页
-paginate: 2
-paginatepath: ['page:num']
+theme_toggle: true # Change to true if you wish to show an icon in the navigation for dynamic theme toggling
+about_enabled: true # Change to true if you wish to show an icon in the navigation that redirects to the about page
+discus_identifier: chalk-1 # Add your Disqus identifier
+ga_analytics: UA-28631876-6 # Add your GA Tracking Id
+local_fonts: false # Change to true if you wish to use local fonts
+rss_enabled: true # Change to false if not
+scrollappear_enabled: true # Change to false to disable
+tag_nav_enabled: true # Change to true if you wish to show an additional 'tag-list' navigation below the header
+social:
+  dribbble: nielsenramon # Add your Dribbble handle
+  facebook: # Add your Facebook handle
+  flickr: # Add your Flickr handle
+  github: nielsenramon # Add your GitHub handle
+  linkedin: # Add your LinkedIn handle
+  twitter: nielsenramon # Add your Twitter handle
+  email: # Add your Email address
+  bitcoin: # Add your Bitcoin link or address
+  ethereum: # Add your Ethereum link or address
+  gitlab: # Add your GitLab handle
+  youtube: # Add your Youtube handle
+  twitch: # Add your Twitch handle
+  discord: # Add you Discord server invitation ID
+  tumblr: # Add your Tumblr handle
+  bitbucket: # Add your Bitbucket handle
+  docker: # Add your Docker Hub handle
+  instagram: # Add your Instagram handle
+  keybase: # Add your Keybase handle
+  medium: # Add your Medium handle
+  spotify: # Add your Spotify handle
+  stackoverflow: # Add your Stack Overflow ID number
+  steam: # Add your Steam handle
 
-# since
-footer:
-  since: 2018
 
-# Markdown
-markdown: kramdown
-kramdown:
-  input: GFM
-# 代码高亮 使用rouge
-highlighter: rouge
-# 代码高亮主题使用pygments主题: autumn\ default\ emacs\ friendly\ manni\ murphy\ pastie\ perldoc\ tango 任选一个你喜欢的主题名称填在下面的单引号中
-pygmentsTheme: 'default'
+# Important settings (change at own risk)
 
-# 友情链接
-friends:
-  jekyll: 'https://www.jekyll.com.cn/'
-
-# 评论 最佳体验 在disqus、livere和Gitment之间三选一
-# disqus 评论
-disqus: false
-disqus_url: '' # https://abc.disqus.com/embed.js
-# 来必力评论
-livere: true
-livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
-# Gitment评论 OAuth Application
-Gitment: false
-Gitment_owner: ''  # github用户名
-Gitment_repo: ''  # github博客存放的仓库名
-client_id: ''  # 注册 OAuth Application 后获得的 client_id
-client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
-
-# Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
-social-share: true
-social-share-items: ['qq', 'wechat', 'weibo', 'twitter', 'facebook']
-
-# 百度统计 在baidu-url里填写自己相关的url代码
-baidu: true
-baidu-url: ''
-# 谷歌分析 在google-ID里填写自己在谷歌分析获得的追踪ID
-google: false
-google-ID: ''
-
-# 博客头信息备选颜色（该部分在站点中不充当站点变量，将其写在post的头信息中用来充当页面变量）
-color: rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)
+assets:
+  plugins:
+    css: { autoprefixer: {}}
+    img: { optim: {}}
+  source_maps: false
+  sources:
+    - _assets/icons
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/yarn
+collections:
+  my_tags:
+    output: true
+    permalink: /tag/:slug/
+defaults:
+  -
+    scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: articles_by_tag
+exclude:
+  - .travis.yml
+  - bin/*
+  - circle.yml
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - README.md
+  - vendor/
+  - yarn.lock
+plugins:
+  - jekyll-assets
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jemoji
+paginate_path: /posts/page/:num/
+permalink: posts/:slug
