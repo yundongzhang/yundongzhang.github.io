@@ -301,6 +301,9 @@
             </a>
           </div>
           <!--/noindex-->
+        {% elsif post.excerpt  %}
+          <span hidden>1</span>
+          <!--/noindex-->
         {% elsif site.auto_excerpt.enable %}
           {% assign content = post.content | strip_html %}
           {{ content | slice: 0, site.auto_excerpt.length }}
