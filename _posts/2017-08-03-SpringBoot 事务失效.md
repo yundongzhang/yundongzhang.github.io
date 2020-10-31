@@ -1,6 +1,5 @@
 ---
 title: StringBoot 事务失效
-description: JDK1.8 + SpringBoot2.x 出现事务失效
 date: 2017-08-03 23:08:02
 categories:
  - Bug

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d479f155-513e-493b-bcda-87ed75803b62" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/_macro/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/_macro/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2017-07-21-拥有最多糖果的孩子.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-07-21-拥有最多糖果的孩子.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2017-08-03-SpringBoot 事务失效.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2017-08-03-SpringBoot 事务失效.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +33,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604156651076</updated>
-      <workItem from="1604156652777" duration="2275000" />
+      <workItem from="1604156652777" duration="2555000" />
     </task>
     <servers />
   </component>
