@@ -268,7 +268,7 @@
       </header>
     {% endunless %}
 
-    <div hidden class="post-body{% if site.han %} han-init-context{% endif %}" itemprop="articleBody">
+    <div class="post-body{% if site.han %} han-init-context{% endif %}" itemprop="articleBody">
 
       {% comment %} Gallery support {% endcomment %}
       {% if post.photos and post.photos.size > 0 %}
@@ -293,7 +293,7 @@
 
       {% if is_index %}
         {% if post.description and site.excerpt_description %}
-          {{ post.description }}
+<!--          {{ post.description }}-->
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="{{ post.url | relative_url }}">
@@ -426,7 +426,7 @@
           {% assign isLast = true %}
         {% endif %}
         {% unless isLast %}
-          <div class="post-eof"></div>
+          <div class="post-eof" style="margin: 60px auto 50px;"></div>
         {% endunless %}
       {% endif %}
     </footer>
