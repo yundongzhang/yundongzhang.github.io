@@ -51,7 +51,12 @@
       {% assign style = style | append: 'color: ' | append: mid_color %}
     {% endif %}
     {% assign tag_url_encode = tag[0] | url_encode | replace: '+', '%20' %}
-    <a href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}"><i class="fa fa-tag"></i>{{ tag[0] }}</a>
+    <style>
+      a.tag_hover:hover{
+        color:#555555;
+      }
+    </style>
+    <a class="tag_hover" href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}"><i class="fa fa-tag"></i>{{ tag[0] }}</a>
   {% endfor %}
 
 {% endcapture %}
