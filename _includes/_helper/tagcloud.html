@@ -52,7 +52,7 @@
     {% endif %}
     {% assign tag_url_encode = tag[0] | url_encode | replace: '+', '%20' %}
 
-    <a href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }};color:#555555;"><i class="fa fa-tag"></i>{{ tag[0] }}</a>
+    <a href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}">{{ tag[0] }}</a>
     {% endfor %}
 
 {% endcapture %}
