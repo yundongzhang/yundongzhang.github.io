@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d479f155-513e-493b-bcda-87ed75803b62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/_common/components/post/post-reward.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/_common/components/post/post-reward.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/_helper/tagcloud.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/_helper/tagcloud.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604156651076</updated>
       <workItem from="1604156652777" duration="6272000" />
-      <workItem from="1604211849497" duration="729000" />
+      <workItem from="1604211849497" duration="992000" />
     </task>
     <servers />
   </component>
@@ -59,10 +59,10 @@
       <screen x="0" y="23" width="1840" height="1057" />
     </state>
     <state x="100" y="123" width="1640" height="857" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1840.1057@0.23.1840.1057" timestamp="1604157692100" />
-    <state x="755" y="294" width="604" height="735" key="find.popup" timestamp="1604213245571">
+    <state x="755" y="294" width="604" height="735" key="find.popup" timestamp="1604213785162">
       <screen x="0" y="23" width="1840" height="1057" />
     </state>
-    <state x="755" y="294" width="604" height="735" key="find.popup/0.23.1840.1057@0.23.1840.1057" timestamp="1604213245571" />
+    <state x="755" y="294" width="604" height="735" key="find.popup/0.23.1840.1057@0.23.1840.1057" timestamp="1604213785162" />
     <state x="585" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1604163414696">
       <screen x="0" y="23" width="1840" height="1057" />
     </state>
