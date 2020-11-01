@@ -51,8 +51,11 @@
       {% assign style = style | append: 'color: ' | append: mid_color %}
     {% endif %}
     {% assign tag_url_encode = tag[0] | url_encode | replace: '+', '%20' %}
-    <a class="tag_hover" href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}"><i class="fa fa-tag"></i>{{ tag[0] }}</a>
-  {% endfor %}
+
+    <div class="tag_hover">
+      <a href="{{ '/tag/#/' | relative_url | append: tag_url_encode }}" style="{{ style }}"><i class="fa fa-tag"></i>{{ tag[0] }}</a>
+    </div>
+    {% endfor %}
 
 {% endcapture %}
 {% assign tagcloud = tagcloud | normalize_whitespace %}
