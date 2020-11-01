@@ -320,9 +320,9 @@ post_meta:
 # Post wordcount display settings
 post_wordcount:
   item_text: true
-  wordcount: true #单篇文章字数
-  min2read: true #单篇阅读时长
-  totalcount: true #站点总字数
+#  wordcount: true #单篇文章字数
+#  min2read: true #单篇阅读时长
+#  totalcount: true #站点总字数
   separated_meta: true
 
 # Wechat Subscriber
