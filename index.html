@@ -39,8 +39,14 @@
             margin: 0;
             padding: 0;
             position: relative;
-            background-image: url("https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture");
-            background-size: cover;
+        }
+
+        /*PC*/
+        @media screen and (min-width:960px){
+            body {
+                background-image: url("https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture");
+                background-size: cover;
+            }
         }
 
         * {
