@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>YUNDONG</title>
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #parent {
+            height: 100%;
+            margin: 0;
+        }
+
+        #child {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        #container {
+            /*保证footer是相对于container位置绝对定位*/
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+            /*设置padding-bottom值大于等于footer的height值，以保证main的内容能够全部显示出来而不被footer遮盖；*/
+            padding-bottom: 100px;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            height: 200px;
+        }
+
+        .main {
+            width: 100%;
+            height: 200px;
+        }
+
+        footer {
+            width: 100%;
+            height: 50px; /* footer的高度一定要是固定值*/
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture')">
+<div id="parent">
+    <div id="container">
+        <header></header>
+        <section class="main">
+            <div id="child" style="text-align: center;">
+                <p>
+                    <a style="color: black;font-weight:bold" href="https://www.jianshu.com/u/899c1775022b"
+                       target="_blank">📕BLOG</a>
+                </p>
+                <p style="margin-top: 2em">
+                    <a href="https://github.com/yundongzhang" target="_blank"
+                       style="top: 50px;color: black;font-weight:bold">🚑GitHub</a>
+                </p>
+            </div>
+        </section>
+        <footer>
+            <div style="text-align: center">
+                <a href="http://beian.miit.gov.cn" target="_Blank" style="text-decoration:none; color: dimgrey;">豫ICP备20021638号</a>
+            </div>
+        </footer>
+    </div>
+
+</div>
+
+
+</body>
+</html>
